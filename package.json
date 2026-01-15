@@ -2,7 +2,7 @@
   "name": "m3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rostislavk636.github.io/modul-canvas",
+  "homepage": "https://rostislavk636.github.io/m3",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
