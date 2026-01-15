@@ -1,4 +1,5 @@
 import React from "react";
+import boardImage from './board.png';
 
 export default function FullBoard(props) {
     return(
@@ -11,7 +12,7 @@ export default function FullBoard(props) {
             </div>
             <div className="info">       
                 <div className='card-board' key={props.board.id}>
-                    <img src={'../img/' + props.board.img} alt={props.board.name}/>
+                    <img src={boardImage} alt={props.board.name}/>
                     <h3>{props.board.name}</h3>
                     <p className='desc'>{props.board.desc}</p>
                     <p><b>{props.board.data}</b></p>

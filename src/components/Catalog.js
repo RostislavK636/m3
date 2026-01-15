@@ -1,4 +1,5 @@
 import React from 'react'
+import boardImage from './board.png';
 
 export default function Catalog(props) {
     return(
@@ -7,7 +8,7 @@ export default function Catalog(props) {
         <div className='catalog'>
             {props.catalog.map((board) => (
                 <div className='card-board' key={board.id}>
-                    <img src={'../img/' + board.img} alt={board.name}/>
+                    <img src={boardImage} alt={board.name}/>
                     <h3>{board.name}</h3>
                     <p className='desc'>{board.desc}</p>
                     <p><b>{board.data}</b></p>
