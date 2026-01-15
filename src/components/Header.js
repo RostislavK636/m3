@@ -6,7 +6,7 @@ export default function Header() {
         <div className="header">
             <div className="logo">
             <h1>BoardCool</h1>
-            <img src="img/logo.png" alt="Image" width='50px'/>
+            <img src="img/logo.png" alt="BoardCool logo" width='50px'/>
             </div>
             <div className="nav">
                 <ul>

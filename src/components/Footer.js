@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="contact">
                <ul>
                     <li><b>Телефон: </b> +7985648578</li>
-                    <li><b>Почта: </b> <a>info24@s.mfua.ru</a></li>
+                    <li><b>Почта: </b> <a href="mailto:info24@s.mfua.ru">info24@s.mfua.ru</a></li>
                 </ul> 
             </div>
             <div className='nav'>
