@@ -1,61 +1,58 @@
-import React, {useState} from "react"
-import Header from './components/Header.js'
-import Footer from './components/Footer.js'
-import Catalog from './components/Catalog.js'
-import FullBoard from './components/FullBoard.js'
+import React, {useState} from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer' 
+import Catalog from './components/Catalog'
+import FullBoard from './components/FullBoard'
 
 function App() {
-  let catalog = [
+  const catalog = [
     {
       id: 1,
-      img: 'board.png',
-      name: 'Board Rostislav',
-      desc: 'Board for Rostislav where him can do honwork and praktik',
-      data: '12.08.2020'
+      name: 'Board 1',
+      desc: 'desc for Board 1 with new Efects',
+      data: '10.10.2002'
     },
     {
-      id: 1,
-      img: 'board.png',
-      name: 'Board',
-      desc: 'Board where can do honwork and praktik',
-      data: '25.11.2026'
+      id: 2,
+      name: 'Board 2',
+      desc: 'desc for Board 2 with new Efects',
+      data: '10.10.2002'
     },
     {
-      id: 1,
-      img: 'board.png',
-      name: 'Board noRostislav',
-      desc: 'Board for noRostislav where him can do honwork and praktik',
-      data: '02.08.2025'
+      id: 3,
+      name: 'Board 3',
+      desc: 'desc for Board 3 with new Efects',
+      data: '10.10.2002'
     }
   ]
 
+  const [ifFull, setIsFull] = useState(false);
+  const [getBoard, setGetBoard] = useState(null)
 
-  const [isFull, setIsFull] = useState(false)
-  const [fullBoard, setFullBoard] = useState(null)
-
-  const showFullBoard =(board) => {
-    if(board) {
-      setFullBoard(board)
-      setIsFull(true)
+  const showBoard = (board) => {
+    if(board){
+      setIsFull(true);
+      setGetBoard(board);
     } else {
-      setIsFull(false)
+      setIsFull(false);
+      setGetBoard(null)
     }
   }
 
+  const[active, setActive] = useState(0)
+
+  const showActive = (index) => {
+    setActive(index)
+  }
+
+
+
   return (
-    <>
-    <Header/>
-
-    {isFull ? (<FullBoard catalog={catalog} board={fullBoard} showFullBoard={showFullBoard}/>) 
-    : (<Catalog catalog={catalog} showFullBoard={showFullBoard}/>)}
-    
-
-
-    <Footer/>
-
-    
-
-    </>
+    <div className="App">
+      <Header showActive={showActive} active={active}/>
+      {ifFull ? <FullBoard board={getBoard} showBoard={showBoard}/>: <Catalog catalog={catalog} showBoard={showBoard}/>  }
+      <Footer showActive={showActive} active={active}/>
+    </div>
   );
 }
 
